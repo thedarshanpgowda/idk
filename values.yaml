@@ -1,0 +1,14 @@
+server:
+  image: thedarshanpgowda/varnish
+  tag: server
+  port: 3001
+  replicas: 1
+
+client:
+  image: thedarshanpgowda/varnish
+  tag: client
+  port: 3000
+  replicas: 1
+
+service:
+  type: NodePort
