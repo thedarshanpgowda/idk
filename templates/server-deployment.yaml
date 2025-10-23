@@ -29,4 +29,4 @@ spec:
   - port: {{ .Values.server.port }}
     targetPort: {{ .Values.server.port }}
     nodePort: 30001
-  type: {{ .Values.service.type }}
+  type: ClusterIP

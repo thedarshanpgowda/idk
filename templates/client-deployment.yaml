@@ -16,7 +16,7 @@ spec:
       - name: client
         image: {{ .Values.client.image }}:{{ .Values.client.tag }}
         ports:
-        - containerPort: {{ .Values.client.port }}
+        - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
@@ -26,7 +26,7 @@ spec:
   selector:
     app: client
   ports:
-  - port: {{ .Values.client.port }}
-    targetPort: {{ .Values.client.port }}
+  - port: 3000
+    targetPort: 3000
     nodePort: 30000
-  type: {{ .Values.service.type }}
+  type: NodePort
